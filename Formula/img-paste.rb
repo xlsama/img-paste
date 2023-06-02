@@ -1,8 +1,8 @@
 class ImgPaste < Formula
   desc "Command-line tool to save image from clipboard to file"
   homepage "https://github.com/xlsama/img-paste"
-  url "https://github.com/xlsama/img-paste/releases/download/v1.0.0/img-paste-1.0.0.tar.gz"
-  sha256 "7e0e1b5265f32515e0d8f29c405dcda5ffe270010ca69f4223ea7dbda4a8b6c3"
+  url "https://github.com/xlsama/img-paste/releases/download/v1.0.1/img-paste-1.0.1.tar.gz"
+  sha256 "4ed5f70b753b328931ec8f470ffe82d19bd1a89ca80a25c480e7e6f4e64fa617"
   license "MIT"
 
   def install
