@@ -5,8 +5,7 @@
 ## 安装
 
 ```shell
-brew tap xlsama/img-paste
-brew install img-paste
+brew tap xlsama/img-paste https://github.com/xlsama/img-paste && brew install img-paste
 ```
 
 ## 使用
