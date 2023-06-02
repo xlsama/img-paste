@@ -16,8 +16,10 @@ int main(int argc, const char *argv[]) {
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
 
     if (!ok) {
-      printf("No image in pasteboard\n");
-      return 1;
+      @throw [NSException
+          exceptionWithName:@"ImageNotInPasteboardException"
+                     reason:@"No image in pasteboard"
+                   userInfo:nil];
     }
 
     NSImage *image = [[pasteboard readObjectsForClasses:classArray
