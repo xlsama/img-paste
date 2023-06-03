@@ -15,11 +15,17 @@ int main(int argc, const char *argv[]) {
 
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
 
-    if (!ok) {
-      @throw [NSException
-          exceptionWithName:@"ImageNotInPasteboardException"
-                     reason:@"No image in pasteboard"
-                   userInfo:nil];
+    @try {
+        if (!ok) {
+          @throw [NSException
+              exceptionWithName:@"ImageNotInPasteboardException"
+                         reason:@"No image in clipboard"
+                       userInfo:nil];
+        }
+    }
+    @catch (NSException *exception) {
+        printf("%s\n", [exception.reason UTF8String]);
+        return 1;
     }
 
     NSImage *image = [[pasteboard readObjectsForClasses:classArray
